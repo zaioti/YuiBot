@@ -1,6 +1,6 @@
-const { Client, Collection } = require("discord.js"),
-fs = require("fs"),
-bot = new Client({
+const { Client, Collection } = require("discord.js");
+const fs = require("fs");
+const bot = new Client({
   intents: [
     'GUILDS',
     'GUILD_MESSAGES',
