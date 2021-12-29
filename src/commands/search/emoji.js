@@ -6,7 +6,7 @@ module.exports = {
   aliases: ['emojis', 'emojisearch', 'searchemoji', 'em'],
   run: async (bot, message, args) => {
     if (!args[0]) {
-      message.channel.send(`• É necessário informar um parâmetro de pesquisa.`);
+      message.reply(`• É necessário informar um parâmetro de pesquisa.`);
       return;
     }
     
