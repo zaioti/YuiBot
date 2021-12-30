@@ -12,7 +12,6 @@ module.exports = {
     
     const emojiObj = await ShardData.GetEmojiByName(bot, args[0]) || await ShardData.GetEmojiByID(bot, args[0]);
     
-    
     if (emojiObj === null) {
       message.reply(`• Esse emoji não está em nenhum servidor que eu estou.`);
       return;
