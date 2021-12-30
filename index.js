@@ -7,7 +7,7 @@ const shard = new ShardingManager("./src/main.js", {
 });
 
 shard.on('shardCreate', shard => {
-    console.log(`[${new Date().toString().split(" ", 5).join(" ")}] Launched shard #${shard.id + 1}`);
+  console.log(`[${new Date().toString().split(" ", 5).join(" ")}] Launched shard #${shard.id + 1}`);
 });
 
 shard.spawn();
