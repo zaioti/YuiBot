@@ -1,5 +1,5 @@
 const GetGuildByID = async (bot, guildId) => {
-  const req = await bot.shard.broadcastEval((c, id) => c.guilds.cache.find(x => x.id = id), {
+  const req = await bot.shard.broadcastEval((c, id) => c.guilds.cache.find(x => x.id == id), {
     context: guildId
   });
   return req.find(res => !!res) || null
