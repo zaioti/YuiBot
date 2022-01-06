@@ -9,7 +9,7 @@ module.exports = async (bot, message) => {
     await message.guild.members.fetch(message.author.id);
   }
   var prefixo;
-  prefixo = { default: true, value: ">" }; //you can change the prefix here
+  prefixo = { default: true, value: ">" }; // troque o prefixo aqui
   //mention prefix
   const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const prefixRegex = new RegExp(`^(<@!?${bot.user.id}>|${escapeRegex(prefixo.value)})\\s*`);
@@ -20,7 +20,10 @@ module.exports = async (bot, message) => {
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) {
     if (message.content.startsWith(`<@!${bot.user.id}>`) || message.content.startsWith(`<@${bot.user.id}>`)) {
-      message.channel.send(`• Prefixo padrão: \`${prefixo.value}\`.`);
+      let embPrefix = new MessageEmbed()
+        .setColor("GREEN")
+        .setDescription(`Meu prefixo é: \`${prefixo.value}\``)
+      message.channel.send({ embed: [embPrefix] });
       return;
     }
     return;
@@ -30,7 +33,7 @@ module.exports = async (bot, message) => {
   if (command) command.run(bot, message, args, prefixo);
   if (!command) {
     const emb = new MessageEmbed()
-      .setColor('RED')
+      .setColor("RED")
       .setDescription(`Comando \`${cmd}\` não encontrado.`);
     message.channel.send({ embeds: [emb] });
     return;
