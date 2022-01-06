@@ -23,7 +23,7 @@ module.exports = async (bot, message) => {
       let embPrefix = new MessageEmbed()
         .setColor("GREEN")
         .setDescription(`Meu prefixo é: \`${prefixo.value}\``)
-      message.channel.send({ embed: [embPrefix] });
+      message.channel.send({ embeds: [embPrefix] });
       return;
     }
     return;
